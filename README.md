@@ -82,8 +82,8 @@ python pychat.py
 
 3. **Setting up Ollama**
    - [Install Ollama](https://ollama.ai/) on your system
-   - Make sure Ollama is running
-   - In the application, use the default URL (`http://localhost:11434`) or modify if Ollama is running elsewhere
+   - Make sure Ollama is running and listening on 0.0.0.0 
+   - In the application, use the default URL (`http://localhost:11434`) or modify if Ollama is running elsewhere on the network
    - Click "Refresh Models" to load your installed Ollama models
 
 ### Using Preprompts
