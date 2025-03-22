@@ -393,23 +393,19 @@ class PrepromptUI:
                 self.use_last_checkbox.setChecked(False)
             
             self.update_default_label()
-            QMessageBox.information(
-                self.parent, "Default Preprompt", 
-                f"Default preprompt {'cleared' if name == 'None' or name is None else f'set to \'{name}\''}"
-            )
+            if name == 'None' or name is None:
+                message = "Default preprompt cleared"
+            else:
+                message = f"Default preprompt set to '{name}'"
+                QMessageBox.information(self.parent, "Default Preprompt", message)
     
     def create_new_preprompt(self):
         """Create a new preprompt"""
-        name, ok = QInputDialog.getText(
-            self.parent, "New Preprompt", "Enter name for the new preprompt:"
-        )
+        name, ok = QInputDialog.getText(self.parent, "New Preprompt", "Enter name for the new preprompt:")
         
         if ok and name:
             if name in self.preprompt_manager.get_all_preprompt_names():
-                QMessageBox.warning(
-                    self.parent, "Duplicate Name", 
-                    f"A preprompt named '{name}' already exists."
-                )
+                QMessageBox.warning(self.parent, "Duplicate Name",f"A preprompt named '{name}' already exists.")
                 return
                 
             # Create empty preprompt and select it
@@ -423,28 +419,19 @@ class PrepromptUI:
         """Save the current preprompt content"""
         current_name = self.preprompt_dropdown.currentText()
         if current_name == "None":
-            QMessageBox.warning(
-                self.parent, "No Preprompt Selected", 
-                "Please select or create a preprompt first."
-            )
+            QMessageBox.warning(self.parent, "No Preprompt Selected","Please select or create a preprompt first.")
             return
             
         content = self.preprompt_editor.toPlainText()
         
         # Validate preprompt
         if not self.preprompt_manager.validate_preprompt(content):
-            QMessageBox.warning(
-                self.parent, "Invalid Preprompt", 
-                "The preprompt contains unbalanced brackets or other syntax issues."
-            )
+            QMessageBox.warning(self.parent, "Invalid Preprompt","The preprompt contains unbalanced brackets or other syntax issues.")
             return
             
         # Save preprompt
         self.preprompt_manager.add_preprompt(current_name, content)
-        QMessageBox.information(
-            self.parent, "Preprompt Saved", 
-            f"Preprompt '{current_name}' has been saved."
-        )
+        QMessageBox.information(self.parent, "Preprompt Saved",f"Preprompt '{current_name}' has been saved.")
     
     def delete_current_preprompt(self):
         """Delete the current preprompt"""
@@ -452,11 +439,7 @@ class PrepromptUI:
         if current_name == "None":
             return
             
-        confirm = QMessageBox.question(
-            self.parent, "Confirm Delete", 
-            f"Are you sure you want to delete the preprompt '{current_name}'?",
-            QMessageBox.Yes | QMessageBox.No
-        )
+        confirm = QMessageBox.question(self.parent, "Confirm Delete",f"Are you sure you want to delete the preprompt '{current_name}'?",QMessageBox.Yes | QMessageBox.No)
         
         if confirm == QMessageBox.Yes:
             is_default = (current_name == self.preprompt_manager.default_preprompt)
