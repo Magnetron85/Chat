@@ -48,9 +48,14 @@ The application requires the following Python packages:
 1. Clone the repository:
    ```bash
    git clone https://github.com/Magnetron85/Chat.git
-   cd Chat
+
 Install the required dependencies: 
-bash
+   ```bash
+pip install PyQt5 requests qtconsole fuzzywuzzy
+
+Running the application: 
+   ```bash
+python pychat.py
 
 
 #### Setting up OpenAI 
