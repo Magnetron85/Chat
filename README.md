@@ -51,6 +51,9 @@ The application requires the following Python packages:
 
 ### Running the Application
 
+cd to the folder containing pychat.py 
+
+run
 ```bash
 python pychat.py
 ```
