@@ -49,15 +49,13 @@ The application requires the following Python packages:
    ```bash
    git clone https://github.com/Magnetron85/Chat.git
    ```
-
 2. Install the required dependencies: 
    ```bash
-pip install PyQt5 requests qtconsole fuzzywuzzy
+   pip install PyQt5 requests qtconsole fuzzywuzzy
    ```
-
 3. Running the application: 
    ```bash
-python pychat.py
+   python pychat.py
    ```
 
 
