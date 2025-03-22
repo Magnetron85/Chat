@@ -42,18 +42,7 @@ The application requires the following Python packages:
    cd Chat
    ```
 
-2. Create a virtual environment (recommended):
-   ```bash
-   python -m venv venv
-   
-   # On Windows
-   venv\Scripts\activate
-   
-   # On macOS/Linux
-   source venv/bin/activate
-   ```
-
-3. Install the required dependencies:
+2. Install the required dependencies:
    ```bash
    pip install PyQt5 requests qtconsole
    ```
