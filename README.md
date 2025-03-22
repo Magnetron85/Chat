@@ -47,7 +47,7 @@ The application requires the following Python packages:
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Magnetron85/Chat.git
+   git clone https://github.com/Magnetron85/PyChat.git
    ```
 2. Install the required dependencies: 
    ```bash
