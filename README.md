@@ -1,6 +1,8 @@
 # Pychat
 A versatile desktop application that lets you interact with multiple AI providers (OpenAI, Anthropic Claude, and Ollama) through a unified interface. This PyQt5-based tool offers a seamless experience for using various large language models across different providers.
 
+![Screenshot of the application](screenshot.png)
+
 ## Features
 - **Multiple AI Provider Support**
   - OpenAI (GPT-4, GPT-3.5, etc.)
