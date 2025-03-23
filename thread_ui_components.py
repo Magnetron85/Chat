@@ -62,13 +62,14 @@ class ThreadListWidget(QWidget):
                 border: 1px solid #ddd;
                 border-radius: 4px;
             }
-            QListWidget::item {
+           QListWidget::item {
                 padding: 8px;
                 border-bottom: 1px solid #eee;
+                color: #000000;  /* Force black text for all items */
             }
             QListWidget::item:selected {
                 background-color: #e0e0e0;
-                color: #333;
+                color: #000000;  /* Keep black text when selected */
             }
         """)
         
